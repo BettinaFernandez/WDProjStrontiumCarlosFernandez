@@ -5,7 +5,7 @@
     <meta name="author" content="Bettina Fernandez">
     <title> Quizzes Homepage </title>
     <link rel="icon" href="../../assets/logo.jpg" type="image/png">
-    <link rel="stylesheet" href="../styleIndex.css">
+    <link rel="stylesheet" href="/public/1RECIPES/RECIPES_css.css">
 
 <style>
 body {
@@ -15,29 +15,6 @@ body {
   background-size: cover;
   color: white; }
 
-.quiz_links a{
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    font-weight: 900;
-    font-size: 50px;
-    font-family: 'Super_Shape';
-    font-weight: lighter;
-    text-decoration: none;
-    text-shadow:
-      -2px -2px #ba5b5b,
-       2px -2px #a167ff,
-      -2px  2px #ba5b5b,
-       2px  2px #5a75e2;
-    transition: transform 0.3s ease;
-}
-
-.quiz_links a:visited{
-text-decoration: none;
-    }
-
-.quiz_links a:hover{
-transform: scale(1.2) rotate(1.3deg);
-    }
 
 #about{
     width: 50%;
@@ -45,19 +22,43 @@ transform: scale(1.2) rotate(1.3deg);
     border-radius: 50px;
 }
 
+header h1 {
+    font-size: 120px;
+}
 </style>
 
 </head>
     <body>
     <header>
     <h1> ⚜️ Big Book of Recipes 💡 </h1>
-        <h3>  Welcome, </h3>
+        <h3>  </h3>
 
     </header>
 
 
 <main>
 
+    <div class="BIG_BOOK">
+        <button class="flip-button" onclick = "changePage(-1)">❮</button>
+
+        <div class="book-container">
+            <div class="page left-page">
+                <div class="spine-shadow">
+                    <h2 id="left-title"> Beef Recipes</h2>
+                </div>
+            </div>
+
+            <div class="page right-page">
+                <div id="right-content">
+                    <p id="recipe-desc"> </p>
+                    <a id="recipe-link" class="nav-card" href="../beef_recipes/beef.html"> Check out the Beef Ledger</a>
+                </div>
+        </div>
+    </div>
+
+    <button class="flip-button" onclick ="changePage(1)">❯</button>
+</div>
+</main>
 
     <nav class="nav-grid">
         <div>

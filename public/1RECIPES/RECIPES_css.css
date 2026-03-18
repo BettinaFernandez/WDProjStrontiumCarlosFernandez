@@ -1,8 +1,9 @@
+
 /*BACKGROUND*/
 body {
   margin: 0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("../assets/index_bg.jpg") center center no-repeat fixed;
+  background: url("/assets/index_bg.jpg") center center no-repeat fixed;
   background-size: cover;
   color: white;
 }
@@ -13,12 +14,12 @@ html { /*Allows the page to scroll up and down*/
 /*CUSTOM FONTS*/
 @font-face {
   font-family: 'Nature_Beauty';
-  src: url('../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
+  src: url('/assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Super_Shape';
-  src: url('../assets/SuperShape-PV9qE.ttf') format('truetype');
+  src: url('/assets/SuperShape-PV9qE.ttf') format('truetype');
 }
 /*ALIGNS THE TEXTS*/
 header {
@@ -63,109 +64,76 @@ header h1 span {
   50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
-
-/*SUBTITLE OF THE WEBSITE*/
-p {
-  font-size: 20px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bolder;
-  color: #6f3d3d;
-  margin: 2px auto 2% auto;
-  line-height: 1;
-  text-shadow:
-    -2px -2px  #ffffff79,
-     2px -2px  #ffff,
-    -2px  2px  #ffff,
-     2px  2px  #ffff;
-  animation: colorchange 3s infinite;
-  text-align: left;
-  padding-left: 130px;
-}
-
-/*SUBTITLE OF THE WEBSITE Animation*/
-@keyframes colorchange {
-  0%   { color: rgb(107, 129, 26); }
-  25%  { color: rgb(201, 189, 15); }
-  50%  { color: rgb(164, 93, 27); }
-  75%  { color: rgb(149, 42, 42); }
-  100% { color: rgb(107, 129, 26); }
-}
-
-/*Neatness between the titles*/
-.dividers{        
-    margin: 2px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 40px;
-}
-
-/* -------------------------------- INTRODUCTION OF THE CREATORS ----------------------------------------*/
-.intro_Creators{
+.BIG_BOOK {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.creator_Text{
+.book-container {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: #5d4037;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.page {
+    flex: 1;
+    background: #fffaf0;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 50%;              
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
 }
 
-.intro_Creators h2 {
-    font-family: 'Nature_Beauty';
+.left-page {
+    border-radius: 10px 0 0 10px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.right-page {
+    border-radius: 0 10px 10px 0;
+    border-left: 10px solid rgba(0,0,0,0.1);
+}
+
+#left-title {
+    font-family: 'Super_Shape';
+    color: #ba5b5b;
     font-size: 50px;
-    font-weight: lighter;
-    margin: 2px 10px 2px 50px;
-    text-shadow: 3px 3px 8px rgb(151, 76, 220);
-    }
-
-.intro_Creators h5 {
-    line-height: 1.5;
-    margin: 2px auto auto 2px;
+    text-shadow: 2px 2px white;
 }
 
-.intro_Creators img{
-    width: 400px;
-    margin: 20px;
+#recipe-desc {
+    color: #4e342e;
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.flip-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    font-size: 30px;
+    padding: 15px;
     border-radius: 50%;
-    display: block;
-    border: 2px white solid;
-    flex: 1 1 50%;  
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.intro_content {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: center;
-    gap: 40px; 
-    padding: 30px;
-}
+.flip-btn:hover { background: #ba5b5b; transform: scale(1.1); }
 
-.intro_content h5 {
-    flex: 2;
-    text-align: left;
-    margin: 0; 
-    padding-left: 40px;
-}
-
-.Phoebe_Says_Hi {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-}
-
-.Phoebe_Says_Hi img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-}
-
-
-/* ------------------------- MINI MENU ---------------------*/
 nav.nav-grid {
   text-align: center;
   display: grid;
@@ -257,31 +225,6 @@ h4 {
 
 }
 
-
-.Tab {
-    text-align: center;
-    font-family: 'Nature_Beauty', sans-serif;
-    transition: transform 0.3s ease;
-}
-
-.Tab:hover {
-    transform: scale(1.1);
-}
-
-
-.introduction, .intro_Creators{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, opacity 0.4s ease;
-    opacity: 0;
-}
-
-.introduction.open, .intro_Creators.open {
-    max-height: 1000px;
-    opacity: 1;
-}
-
-
 .homepage_links a{
     display: inline-block;
     color: rgb(255, 255, 255);
@@ -311,94 +254,4 @@ footer{
   font-size: 10px;
   display: flex;
   justify-content: center;
-}
-
-
-
-@media (max-width: 768px) {
-    
-  body{
-    background-attachment: scroll;
-  }
-  header h1{
-    font-size: 45px;
-    padding: 4px
-  }
-  header p{
-    font-size: 14px;
-    margin-bottom: 25px
-
-  }
-  .logo img{
-    width: 140px;
-    height: 140px;
-  }
-  #about{
-    width: 90%;
-    font-size:18px;
-    padding:15px
-  }
-  .dividers {
-    font-size: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .Tab{
-    width:50%;
-  }
-
-
-  .intro_Creators {
-    flex-direction: column;
-    text-align: center;
-  }
-  .creator_Text {
-    align-items: center;
-  }
-
-  .intro_Creators h2 {
-    font-size: 32px;
-    margin: 10px 0;
-  }
-
-  .intro_Creators h5 {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .intro_Creators img {
-    width: 180px;
-    margin: 10px auto;
-  }
-
-  nav.nav-grid {
-    grid-template-columns: 1fr;
-    max-width: 95%;
-    padding: 15px;
-  }
-
-  .nav-card,
-  .active {
-    width: 100%;
-    font-size: 16px;
-    padding: 15px;
-  }
-
-  h4 {
-    font-size: 30px;
-  }
-  .homepage_links a {
-    font-size: 28px;
-  }
-
-  footer {
-    font-size: 9px;
-    padding: 8px;
-  }
-
-  .intro_content {
-   flex-direction: column;
-}
 }
