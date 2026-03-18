@@ -1,3 +1,17 @@
+# Q4 FINAL MODIFICATION PROPOSAL
+## Final Title: Little Chef's Corner 👩‍🍳🧁
+## 2 - Sentence desc
+Little Chef's Corner is all about making recipes easy to access and available to all. We tackle recipes for everyone, including those with dietary restrictions, time restrictions, and limited ingredients, offering meals that are quick and delicious!
+## This project is for...
+people who want snacks and meals that are quick and easy to make with limited ingredients and time.
+## They will love this project because...
+our website has all the needed ingredients, measurements, and recipes for everyone. Most of the presented recipes are made with ingredients you could easily buy at sari-sari stores and nearby groceries. They're all quick and easy to make! On top of that, our website has a few quizzes for entertainment and fun!
+## This project features/includes...
+An introduction page telling you everything about the website and the creators, a bunch of different pages for recipes, a personality quiz and an online store for fun, and a gallery!
+## This project does NOT include...
+Harsh or uncomfortable features that is intended to cause uneasinesss to the user. This project does not include violent or inappropriate content, and is ensured that all features are kept family-friendly.
+## License
+
 # Q3 PROPOSAL UPDATE
 ## Final Title: Little Chef's Corner 👩‍🍳🧁
 ## Features
