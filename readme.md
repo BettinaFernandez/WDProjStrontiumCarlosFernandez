@@ -11,6 +11,9 @@ An introduction page about the website and the creators, a bunch of different pa
 ## This project does NOT include...
 Harsh or uncomfortable features that is intended to cause uneasinesss to the user. This project does not include violent or inappropriate content, and is ensured that all features are kept family-friendly.
 ## License
+This project is licensed under the **MIT License**. 
+You are free to use, modify, and distribute this code for personal or educational purposes, provided that proper credit is given to the original authors.
+Copyright (c) 2026 Bettina Fernandez & Yna Carlos
 
 # Q3 PROPOSAL UPDATE
 ## Final Title: Little Chef's Corner 👩‍🍳🧁
