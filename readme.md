@@ -1,9 +1,9 @@
 # Q4 FINAL MODIFICATION PROPOSAL
-## Final Title: Little Chef's Corner 👩‍🍳🧁
+## Final Title: Phoebe's Perfect Platter👩‍🍳🧁
 ## 2 - Sentence desc
-Little Chef's Corner is all about making recipes easy to access and available to all. We tackle recipes for everyone, including those with dietary restrictions, time restrictions, and limited ingredients, offering meals that are quick and delicious!
+Phoebe's Perfect Platter is all about making recipes easy to access and available to all. We tackle recipes for everyone, including those with dietary restrictions, time restrictions, and limited ingredients, offering meals that are quick and delicious!
 ## This project is for...
-people who want snacks and meals that are quick and easy to make with limited ingredients and time.
+People who want snacks and meals that are quick and easy to make with limited ingredients and time.
 ## They will love this project because...
 our website has all the needed ingredients, measurements, and recipes for everyone. Most of the presented recipes are made with ingredients you could easily buy at sari-sari stores and nearby groceries. They're all quick and easy to make! On top of that, our website has a few quizzes for entertainment and fun!
 ## This project features/includes...
