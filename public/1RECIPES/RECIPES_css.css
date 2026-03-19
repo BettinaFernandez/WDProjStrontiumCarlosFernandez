@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("/assets/index_bg.jpg") center center no-repeat fixed;
+  background: url("/assets/recipe_bg.jpg") center center no-repeat fixed;
   background-size: cover;
   color: white;
 }
@@ -42,20 +42,15 @@ header {
 header h1 {
   font-family: 'Super_Shape';
   width: 100%;
-  text-align: left;
-  font-size: 143px;
+  text-align: center;
+  font-size: 170px;
   font-weight: 1000;
   color: rgb(255, 255, 255);
   text-shadow: 3px 3px 8px rgb(112, 69, 204);
   padding: 15px;
-  margin: 70px auto 5px auto;
+  margin: auto;
   animation: float 3.5s ease-in-out infinite;
 
-}
-
-header h1 span {
-  display:block;
-  padding-left: 600px;
 }
 
 /*TITLE OF THE WEBSITE Animation*/
@@ -132,7 +127,7 @@ header h1 span {
     transition: 0.3s;
 }
 
-.flip-btn:hover { background: #ba5b5b; transform: scale(1.1); }
+.flip-button:hover { background: #ba5b5b; transform: scale(1.1); }
 
 nav.nav-grid {
   text-align: center;
