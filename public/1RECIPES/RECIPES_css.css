@@ -46,7 +46,7 @@ header h1 {
   font-size: 170px;
   font-weight: 1000;
   color: rgb(255, 255, 255);
-  text-shadow: 3px 3px 8px rgb(112, 69, 204);
+  text-shadow: 3px 3px 8px rgb(204, 69, 82);
   padding: 15px;
   margin: auto;
   animation: float 3.5s ease-in-out infinite;
@@ -101,9 +101,10 @@ header h1 {
 }
 
 #left-title {
-    font-family: 'Super_Shape';
+    font-family: 'Nature_Beauty';
     color: #ba5b5b;
-    font-size: 50px;
+    font-size: 60px;
+    font-weight: lighter;
     text-shadow: 2px 2px white;
 }
 
@@ -117,6 +118,7 @@ header h1 {
 }
 
 .flip-button {
+  text-align: center;
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid white;
     color: white;

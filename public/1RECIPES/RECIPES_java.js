@@ -4,19 +4,16 @@ const recipeData = [
         title: "Beef Recipes",
         desc: "Hearty and savory dishes for the meat lover. From classic stews to sizzling steaks, explore the rich flavors of beef!",
         link: "/beef_recipes/beef.html",
-        icon: "𓃓"
     },
     {
         title: "Pork Recipes",
         desc: "Versatile and delicious. Discover sweet and savory pork recipes that are 'Even Better Than Mama's!'",
         link: "/pork_recipes/pork.html",
-        icon: "🐽"
     },
     {
         title: "Desserts",
         desc: "Sweet, mouthwatering treats to end your meal. From cakes to puddings, Phoebe's sweet tooth has you covered!",
         link: "/desserts_recipes/desserts.html",
-        icon: "🍮"
     }
 ];
 
@@ -37,7 +34,7 @@ function changePage(direction) {
     
     const linkBtn = document.getElementById('recipe-link');
     linkBtn.href = data.link;
-    linkBtn.innerHTML = `Open ${data.title} Ledger ${data.icon}`;
+    linkBtn.innerHTML = `Open ${data.title} Ledger`;
     
     document.getElementById('page-num').innerText = `Page ${currentIndex + 1}`;
 }
