@@ -14,7 +14,8 @@
 }
 
     body {
-      background: url("../assets/storeBackground.jpg") center no-repeat fixed;
+      background: url("../assets/upscalemedia-transformed.jpeg") center no-repeat fixed;
+      background-color: #fff9f031;
       background-size: cover;
     }
 
@@ -28,16 +29,17 @@
       display: block;
     }
     header {
-      background-color: #f47d7d;
+      background-color: #0053a06c;
+      backdrop-filter: blur(4px);
+      border: 2px rgb(31, 36, 65) solid; 
       padding: 15px 20px;
       color: white;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
 
     header h1 {
-      font-size: 30px;
+      font-size: 100px;
       font-family: 'Super_Shape';
         font-weight: lighter;
     }
