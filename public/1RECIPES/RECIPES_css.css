@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("/assets/recipe_bg.jpg") center center no-repeat fixed;
+  background: url("../../assets/recipe_bg.jpg") center center no-repeat fixed;
   background-size: cover;
   color: white;
 }
@@ -14,12 +14,12 @@ html { /*Allows the page to scroll up and down*/
 /*CUSTOM FONTS*/
 @font-face {
   font-family: 'Nature_Beauty';
-  src: url('/assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
+  src: url('../../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Super_Shape';
-  src: url('/assets/SuperShape-PV9qE.ttf') format('truetype');
+  src: url('../../assets/SuperShape-PV9qE.ttf') format('truetype');
 }
 /*ALIGNS THE TEXTS*/
 header {
