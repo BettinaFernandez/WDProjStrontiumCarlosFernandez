@@ -15,6 +15,16 @@ body {
   flex-direction: column;
 }
 
+@font-face {
+  font-family: 'Nature_Beauty';
+  src: url('../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Super_Shape';
+  src: url('../assets/SuperShape-PV9qE.ttf') format('truetype');
+}
+
 .slider-container {
   flex: 1;
   display: flex;
@@ -60,6 +70,8 @@ body {
 }
 
 .carousel-item {
+  font-family: 'Super_Shape';
+  letter-spacing: 2px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -104,6 +116,8 @@ body {
     text-decoration: none;
     z-index: 1000;
     transition: transform 0.3s ease;
+    font-family: 'Nature_Beauty';
+    font-weight: lighter;
 }
 
 .back-home:hover {
