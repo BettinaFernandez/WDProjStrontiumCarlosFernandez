@@ -2,72 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Bettina Fernandez">
-    <title> Desserts Recipes Homepage </title>
-    <link rel="icon" href="../../assets/logo.jpg" type="image/png">
-    <link rel="stylesheet" href="../styleIndex.css">
-
-<style>
-body {
-  margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExenhidnJ2dmFucTB4MnJvbnI5Nmo3aThsdXRlaWU1c2RkbTh0NDIzYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1IlzJMFWwnrGw/giphy.gif") center center no-repeat fixed;
-  background-size: cover;
-  color: white;
-}
-
-#about{
-    width: 50%;
-    background: radial-gradient(circle, rgb(218, 88, 147), rgb(246, 238, 191));
-    border-radius: 50px;
-}
-
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rice Recipes Homepage </title>
+    <link rel="stylesheet" href="../../public/LEDGERS_CSS.css">
 
 </head>
-    <body>
-    <header>
-    <h1> 🍰 Desserts 🧁</h1>
-        <h3>  <!--PUT PARAGRAPH HERE--> </h3>
-    <div class="logo">
-        <img src="../../assets/logo.jpg">
+
+<body>
+
+<a href="../../public/1RECIPES/ALLRECIPES.html" class="back-home">
+    <img src="../../assets/newlogo.png" alt="Home">
+    <span> Back to Recipe Book </span>
+</a>
+
+<header style="text-align:center; padding: 20px;">
+    <h1 style="font-size: 110px; color: white; margin: auto; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+  font-family: 'Super_Shape'; letter-spacing: 2px;">🍙 Rice and Vegetables Specials🍱</h1>
+</header>
+
+<main class="slider-container">
+    <div class="plate"></div>
+    
+    <div class="carousel" id="carousel">
+        <div class="carousel-item"><a href="../rice_veggies_recipes/FriedRice.html">Fried Rice</a></div>
+        <div class="carousel-item"><a href="../rice_veggies_recipes/cesarsalad.html">Cesar Salad</a></div>
+        <div class="carousel-item"><a href="../rice_veggies_recipes/Onigiri.html">Onigiri</a></div>
+        <div class="carousel-item"><a href="../rice_veggies_recipes/Bibimbap.html">Bibimbap</a></div>
+        <div class="carousel-item"><a href="../rice_veggies_recipes/Risotto.html">Risotto</a></div>
+        <div class="carousel-item"><a href="../rice_veggies_recipes/EggRice.html">Egg Rice</a></div>
     </div>
-    </header>
-
-
-<main>
-<section id="about" class="homepage_links">
-<a href="#" onclick="redirect_recipe('crepes_recipe')"> Crepes Recipe </a>
-</section>
-
-<script src="../recipe_directing.js"></script>
 </main>
 
-    <nav class="nav-grid">
-        <div>
-            <h4> Mini Menu </h4>
-            <a class="nav-card" href="../../index.html"> ✧ ༘ ⋆｡♡🏠︎ <br> About us! </a>
-            <a class="nav-card" href="../Secret_Chef_Gallery.html"> (つ.と) <br> Secret Chef Gallery </a>
-            <a class="nav-card" href="../Little_Chef's_Store.html"> 🛒𖦹˖°. <br> Little Chef's Store </a>
-            <a class="nav-card" href="../quizzes/quiz.html"> (๑'ᵕ'๑)⸝* <br> Quizzes </a>
-            <a class="nav-card" href="../beef_recipes/beef.html"> 𓃓 𓃔 𓃓 𓃖 <br> Beef Recipes </a>
-            <a class="nav-card" href="../pork_recipes/pork.html"> ⍝◜ᐢ•🐽•ᐢ◝⍝ <br> Pork Recipes</a>
-            <a class="nav-card" href="../chicken_recipes/chicken.html">  ꒰ঌ( •ө• )໒꒱ <br> Chicken Recipes </a>
-            <a class="nav-card" href="../rice_veggies_recipes/rice_veggies.html"> ˙ . ꒷ 🍙 . 𖦹˙— 🐈‍⬛ <br> Rice and Vegetables </a>
-            <a class="nav-card" href="../pasta_recipes/pasta_noodles.html"> 🍝🥢♡ ༘*.ﾟ <br> Pasta and Noodles </a>
-            <a class="active" href="#dessert"> ୧ ‧₊˚ 🍮 ⋅ ☆ <br> Desserts </a>
-            <a class="nav-card" href="../drinks_recipes/drinks.html"> 🥂⋅♡𓂃 ࣪ ִֶָ☾. <br> Beverages </a>
-            <a class="nav-card" href="../Dietary_Restrictions.html"> 🧸ྀི <br> Dietary Restrictions </a>
-        </div>
-    </nav>
+<script src="../../public/LEDGER_SCRIPT.js"></script>
 
-    </body>
-
-<footer>
-    Sources
-  <ul>
-    <li>(2025b). Giphy.com. https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExenhidnJ2dmFucTB4MnJvbnI5Nmo3aThsdXRlaWU1c2RkbTh0NDIzYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1IlzJMFWwnrGw/giphy.gif</li>
-  </ul>
-</footer>
-
+</body>
 </html>
