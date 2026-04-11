@@ -55,3 +55,47 @@ viewCart.onclick = function() {
 closePopover.onclick = function() {
     popover.style.display = "none";
 };
+
+// New Elements
+const loginOverlay = document.getElementById('loginOverlay');
+const loginBtn = document.getElementById('loginBtn');
+const checkoutSection = document.getElementById('checkoutSection');
+const confirmCheckout = document.getElementById('confirmCheckout');
+const cancelCheckout = document.getElementById('cancelCheckout');
+
+// --- LOGIN LOGIC ---
+loginBtn.onclick = function() {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+
+    if(user && pass) {
+        loginOverlay.classList.add('fade-out');
+    } else {
+        alert("Please enter both username and password!");
+    }
+};
+
+// --- CHECKOUT LOGIC ---
+// Modify your existing viewCart.onclick to show checkout options
+viewCart.onclick = function() {
+    popover.style.display = "block";
+    if (items > 0) {
+        checkoutSection.style.display = "block";
+    } else {
+        checkoutSection.style.display = "none";
+    }
+};
+
+confirmCheckout.onclick = function() {
+    alert("Checkout Successful! Await for parcel.");
+    // Reset the website
+    items = 0;
+    total = 0;
+    updateCart();
+    popover.style.display = "none";
+    checkoutSection.style.display = "none";
+};
+
+cancelCheckout.onclick = function() {
+    checkoutSection.style.display = "none";
+};
