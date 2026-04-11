@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baker's Gallery ~ Phoebe's</title>
+    <link rel="stylesheet" href="Gallery.css">
+</head>
+<body>
+
+    <a href="../index.html" class="home-link">
+        <img src="../assets/newlogo.png" alt="Logo">
+        <span>Back to Homepage</span>
+    </a>
+
+    <div id="authOverlay" class="overlay">
+        <div class="auth-box">
+            <div class="login-icon">🧁</div>
+            <h2 id="authTitle">Welcome Baker!</h2>
+            
+            <div id="loginFields">
+                <input type="text" id="username" placeholder="Username">
+                <button onclick="handleAuth()">Enter Gallery</button>
+                <p class="toggle-text">New Baker? <span onclick="toggleAuth(true)">Create Profile</span></p>
+            </div>
+
+            <div id="signupFields" style="display:none;">
+                <input type="text" id="newUsername" placeholder="Choose Username">
+                <button onclick="handleAuth(true)">Create & Enter</button>
+                <p class="toggle-text">Registered? <span onclick="toggleAuth(false)">Log In</span></p>
+            </div>
+        </div>
+    </div>
+
+    <main id="mainGallery" style="display:none;">
+        <h1 id="userGreeting">Baker's Gallery!! </h1>
+        
+        <div class="controls">
+            <div id="dropZone" class="drop-zone">
+                <p>Drop Photo Here</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+            <input type="text" id="imgCaption" placeholder="Write a caption...">
+            <button id="logoutBtn" onclick="location.reload()">Logout</button>
+        </div>
+
+        <div id="bulletinBoard" class="board"></div>
+    </main>
+
+    <script src="Gallery.js"></script>
+</body>
+</html>
