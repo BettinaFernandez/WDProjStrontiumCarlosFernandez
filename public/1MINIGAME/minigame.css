@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    background-color: #fce4ec;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 800;
+    color:#4a148c;
+    overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Nature_Beauty';
+  src: url('../../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Super_Shape';
+  src: url('../../assets/SuperShape-PV9qE.ttf') format('truetype');
+}
+
+
+
+.screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.screen h1 {
+    font-family: 'Super_Shape';
+    font-size: 50px;    
+    letter-spacing: 3px;
+    color: white;
+    font-weight: 200;   
+}
+
+.home-logo-link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6d14ad;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.home-logo-link img { height: 150px; margin-left: 10px; }
+
+.bulletin-board {
+    background: #9575cd;
+    padding: 50px;
+    border: 15px solid #5d4037;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.recipe-cards { display: flex; gap: 30px; margin-top: 20px; }
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 130px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+.card.active { cursor: pointer; transform: rotate(-2deg); transition: 0.3s; }
+.card.active:hover { transform: scale(1.1) rotate(0deg); }
+.card.locked { opacity: 0.6; cursor: not-allowed; }
+
+.menu-img { width: 100px; height: 100px; object-fit: contain; }
+
+.bubble {
+    background: white;
+    padding: 40px;
+    border-radius: 50px;
+    border: 6px solid #9575cd;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 0 #7e57c2;
+}
+
+#typeText { font-size: 1.8rem; color: #4a148c; font-weight: bold; }
+
+.kitchen-table {
+    background: #fff9c4;
+    width: 85%;
+    height: 80%;
+    border: 12px solid #fbc02d;
+    border-radius: 60px;
+    text-align: center;
+    position: relative;
+}
+
+#interactionZone { height: 400px; position: relative; display: flex; justify-content: center; align-items: center; }
+
+#gameImg { width: 250px; user-select: none; }
+#utensil { width: 120px; position: absolute; pointer-events: none; z-index: 50; display: none; }
+
+.meter { width: 500px; height: 30px; background: #eee; margin: 20px auto; border-radius: 20px; border: 4px solid #5d4037; overflow: hidden; }
+#bar { width: 0%; height: 100%; background: #66bb6a; transition: 0.1s; }
+
+.ing-item { width: 80px; margin: 0 20px; cursor: grab; }
+
+.result-card { background: white; padding: 50px; border-radius: 40px; text-align: center; box-shadow: 0 20px 0 #9f62f0; border: 8px solid #e4bbf8; }
+.final-dish { width: 350px; border-radius: 20px; margin: 20px 0; }
+
+.shake { animation: shake 0.1s infinite; }
+@keyframes shake { 0% { transform: translate(2px, 2px); } 50% { transform: translate(-2px, -2px); } }
+
+.result-card button {
+    background: linear-gradient(135deg, #ff80ab, #f06292); 
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 900;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* This creates the "3D" pop-out effect */
+    box-shadow: 0 8px 0 #ad1457; 
+    
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.result-card button:hover {
+    transform: translateY(-3px); 
+    filter: brightness(1.1);
+    box-shadow: 0 11px 0 #ad1457;
+}
+
+.result-card button:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #ad1457;
+}

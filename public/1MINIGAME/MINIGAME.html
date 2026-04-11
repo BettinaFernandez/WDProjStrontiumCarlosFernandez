@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phoebe's Cooking Challenge </title>
+    
+    <link rel="icon" href="../../assets/newlogo.png" type="image/png">
+    <link rel="stylesheet" href="minigame.css">
+</head>
+<body>
+
+    <a href="../../index.html" class="home-logo-link">
+        <span>Back to Homepage</span>
+        <img src="../../assets/newlogo.png" alt="Logo">
+    </a>
+
+    <div id="recipeMenu" class="screen">
+        <div class="bulletin-board">
+            <div class="pin-deco"></div>
+            <h1>Daily Recipes</h1>
+            <div class="recipe-cards">
+                <div class="card active" onclick="startDialogue()">
+                    <div class="tape"></div>
+                    <img src="../../assets/omelette.png" class="menu-img">
+                    <p>Omelette</p>
+                </div>
+                <div class="card locked">
+                    <div class="tape"></div>
+                    <img src="../../assets/cake.webp" class="menu-img">
+                    <p>Cake (Locked)</p>
+                </div>
+                <div class="card locked">
+                    <div class="tape"></div>
+                    <img src="../../assets/pasta.png" class="menu-img">
+                    <p>Pasta (Locked)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialogueScreen" class="screen" style="display:none;">
+        <div class="bubble">
+            <p id="typeText"></p>
+            <div class="bubble-btns">
+                <button onclick="handleNext()">Next</button>
+                <button onclick="endDialogue()">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen" style="display:none;">
+        <div class="kitchen-table">
+            <h2 id="stepTitle">Step 1: Crack the Eggs</h2>
+            
+            <div id="interactionZone">
+                <img id="utensil" src="../../assets/whisk.png">
+                <div id="targetArea" onmousedown="startAction()" onmouseup="stopAction()">
+                    <img id="gameImg" src="../../assets/egg.png">
+                </div>
+            </div>
+
+            <div id="ingredientShelf" style="display:none;">
+                <img src="../../assets/cheese.png" id="cheese" class="ing-item" draggable="true" ondragstart="drag(event)">
+                <img src="../../assets/pepper.webp" id="pepper" class="ing-item" draggable="true" ondragstart="drag(event)">
+            </div>
+
+            <div class="meter">
+                <div id="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="endScreen" class="screen" style="display:none;">
+        <div class="result-card">
+            <h1 style="color: rgb(202, 130, 238)">Bon Appétit!</h1>
+            <img src="../../assets/omelette.png" class="final-dish">
+            <p>You made a perfect Golden Omelette!</p>
+            <button onclick="location.reload()">Cook Again</button>
+        </div>
+    </div>
+
+    <script src="minigame.js"></script>
+</body>
+</html>
