@@ -86,11 +86,22 @@ body {
 }
 
 .carousel-item a {
+  transition: opacity 0.4s ease;
   color: white;
   text-decoration: none;
   font-weight: 900;
   font-size: 1.5rem;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-item.is-back a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-item.is-back {
+    opacity: 0.4;
+    filter: blur(2px);
 }
 
 /* 6 Items Positioned */
