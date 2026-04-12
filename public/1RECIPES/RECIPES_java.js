@@ -28,7 +28,7 @@ const recipeData = [
     {
        title: "Beverages",
        desc: "",
-       link:  "../drink_recipes/drinks.html"
+       link:  "../drinks_recipes/drinks.html"
     },
     {
         title: "Pasta Recipes",
