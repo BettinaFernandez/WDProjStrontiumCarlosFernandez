@@ -2,7 +2,7 @@
 const recipeData = [
     {
         title: "Rice and Vegetables",
-        desc: "",
+        desc: "Yummy Yummy",
         link: "../rice_veggies_recipes/rice_veggies.html"
     },
     {
@@ -22,17 +22,17 @@ const recipeData = [
     },
     {
         title: "Chicken Recipes",
-        desc: "",
+        desc: "Yummy Yummy",
         link: "../chicken_recipes/chicken.html"
     },
     {
        title: "Beverages",
-       desc: "",
+       desc: "Yummy Yummy",
        link:  "../drinks_recipes/drinks.html"
     },
     {
         title: "Pasta Recipes",
-        desc: "",
+        desc: "Yummy Yummy",
         link: "../pasta_recipes/pasta_noodles.html"
     }
 

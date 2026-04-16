@@ -5,6 +5,7 @@ body {
   background: url("../assets/index_bg.jpg") center center no-repeat fixed;
   background-size: cover;
   color: white;
+  cursor: url('../assets/cursor.gif') 4 4, auto;
 }
 
 html { /*Allows the page to scroll up and down*/
