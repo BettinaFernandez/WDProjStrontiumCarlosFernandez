@@ -77,17 +77,22 @@ header h1 span {
 }
 
 /* -------------------------------- INTRODUCTION OF THE CREATORS ----------------------------------------*/
-.intro_Creators{
+.intro_Creators {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows stacking  when the screen is too small */
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 50px;
 }
 
-.creator_Text{
+.creator_Text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 1 50%;              
+    flex: 1 1 450px;
+    max-width: 700px;
 }
 
 .intro_Creators h2 {
@@ -104,13 +109,18 @@ header h1 span {
     margin: auto;
 }
 
-.intro_Creators img{
-    width: 400px;
-    margin: 20px;
+.intro_Creators img {
+    width: 100%;            /* Allows it to be fluid */
+    max-width: 400px;  
+    height: auto;          
     border-radius: 50%;
-    display: block;
-    border: 2px white solid;
-    flex: 1 1 50%;  
+    border: 4px solid white; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    flex: 0 0 auto;         /* Prevents the image from stretching weirdly */
+}
+
+.intro_Creators:nth-of-type(odd){
+  flex-direction: row;
 }
 
 .intro_content {
@@ -195,11 +205,13 @@ nav.nav-grid {
   text-align: center;
   padding: 10px;
   margin: 5px auto;
-  width: 1300px;
+  width: 95%;
+  max-width: 1300px;
   font-size: 25px;
   border: dotted 10px #4235638c;
   backdrop-filter: blur(4px);
   border-radius: 50px;
+  box-sizing: border-box;
 }
 
 .active{
@@ -339,7 +351,6 @@ footer {
 
 
   .intro_Creators {
-    flex-direction: column;
     text-align: center;
   }
   .creator_Text {
@@ -357,8 +368,8 @@ footer {
   }
 
   .intro_Creators img {
-    width: 180px;
-    margin: 10px auto;
+    width: 280px;
+    margin: 0 auto;
   }
 
   nav.nav-grid {
@@ -389,4 +400,11 @@ footer {
   .intro_content {
    flex-direction: column;
 }
+  body {
+    /* Keep 'cover' but tell the browser which part of the photo to show */
+    background-size: cover;
+    background-position: 70% center;
+    background-attachment: scroll; 
+  }
+
 }
