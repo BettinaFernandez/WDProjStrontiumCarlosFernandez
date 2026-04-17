@@ -11,23 +11,138 @@
 
 <style>
 
-body {
-  margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("../../assets/quiz.webp") center center no-repeat fixed;
-  background-size: cover;
-  color: white; }
-
-main h1{
-  display: flex;
-  font-family: 'Nature_Beauty';
-  font-weight: lighter;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-align: center;
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Keeps background centered and fixed */
+    background: url("../../assets/quiz.webp") center center no-repeat fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+main {
+    width: 90%;
+    max-width: 800px; 
+    margin: 40px auto;
+    padding: clamp(20px, 5vw, 40px);
+    
+
+    background: rgba(254, 211, 150, 0.4); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-family: 'Nature_Beauty', cursive;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+
+.quiz_questions {
+    width: 100%;
+}
+
+form h2 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-top: 25px;
+    color: #7d4621; 
+}
+
+
+label {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #99c366; 
+}
+
+
+button {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 30px auto 10px;
+    padding: 15px;
+    background: white;
+    color: #8c4414;
+    border: none;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.return_link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return_link a {
+    color: #f6f4f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.return_link a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.8rem;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+footer ul { list-style: none; padding: 0; }
 </style>
     <body>
     <header>
@@ -38,27 +153,27 @@ main h1{
 <section class = "quiz_questions">
 <form id="Quiz_1_Cake">
 
-    <h2> What's your favorite hobby? </h2>
+    <h2 style="text-shadow: none;"> What's your favorite hobby? </h2>
     <label><input  name="Question_1" value="A" type="radio"> Reading Books indoors </label>
     <label><input  name="Question_1" value="B" type="radio"> Going on galas with friends </label>
     <label><input  name="Question_1" value="C" type="radio"> Write and listen to music </label>
 
-    <h2> What's your favorite type of dog? </h2>
+    <h2 style="text-shadow: none;"> What's your favorite type of dog? </h2>
     <label><input type="radio" name="Question_2" value="A"> German Shepherd </label>
     <label><input type="radio" name="Question_2" value="B"> Pug </label>
     <label><input type="radio" name="Question_2" value="C"> Golden Retriever </label>
 
-    <h2> What's your favorite holiday? </h2>
+    <h2 style="text-shadow: none;"> What's your favorite holiday? </h2>
     <label><input type="radio" name="Question_3" value="A"> Halloween </label>
     <label><input type="radio" name="Question_3" value="B"> Christmas </label>
     <label><input type="radio" name="Question_3" value="C"> New Year's </label>
 
-    <button type="button" onclick="cake_result()"> Reveal Your Cake </button>
+    <button type="button" onclick="cake_result()"> Reveal Your Ice Cream </button>
 </form>
 
 <p id="result" style="margin-top:20px; font-weight:bold;"></p>
 
-<script src="../quizzes/cake_quiz.js"></script>
+<script src="../quizzes/icecream.js"></script>
 
 </section>
 

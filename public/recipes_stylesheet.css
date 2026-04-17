@@ -1,222 +1,203 @@
-
-/* BACKGROUND */
+/* BACKGROUND & GLOBAL */
 body {
-  margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("../assets/publicBackground.gif") center center no-repeat fixed;
-  background-size: cover;
-  color: white;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background: url("../assets/publicBackground.gif") center center no-repeat fixed;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden; 
 }
 
-html { /*Allows the page to scroll up and down*/
-  scroll-behavior: smooth;
-}
-
-/*CUSTOM FONTS*/
 @font-face {
   font-family: 'Nature_Beauty';
   src: url('../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
 }
-/*CUSTOM FONTS*/
+
 @font-face {
   font-family: 'Super_Shape';
   src: url('../assets/SuperShape-PV9qE.ttf') format('truetype');
 }
-/*TITLE*/
-main h1 {
-  display: flex;
-  font-size: 90px;                
-  font-family: 'Super_Shape';
-  letter-spacing: 2px;
-  text-align: center;
-  margin: 0 0 10px 0;
-  text-shadow: 3px 3px 8px rgb(204, 69, 78);
-  animation: float 3.5s ease-in-out infinite;
-}
-/*TITLE ANIMATION*/
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-/*SUBTITLE*/
-main p {
-  text-align: center;
-  font-family: 'Nature_Beauty';
-  letter-spacing: 2px;
-  font-weight: lighter;
-  font-style: italic;
-  font-size: 28px;
-  margin: 0 0 20px 0;
-  display: flex;
+
+html {
+    scroll-behavior: smooth;
 }
 
-/*CONTAINER*/
-main {
-  display: flex;
-  width: 90%;
-  margin: 50px auto;
-  column-gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+/* TITLE  */
+main h1 {
+    display: block; 
+    font-size: clamp(2.5rem, 10vw, 5.5rem); 
+    font-family: 'Super_Shape';
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 10px 0;
+    text-shadow: 3px 3px 8px rgb(204, 69, 78);
+    animation: float 3.5s ease-in-out infinite;
 }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* SUBTITLE */
+main p {
+  color:#ba5b5b;
+    text-align: center;
+    font-family: 'Nature_Beauty';
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin: 0 auto 30px auto;
+    width: 100%;
+    justify-content: center;
+}
+
+/* MAIN CONTAINER */
+main {
+    display: flex;
+    width: 92%;
+    max-width: 1200px;
+    margin: 20px auto;
+    column-gap: 30px;
+    row-gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Crucial for iPad/Phone stacking */
+}
+
 
 #about {
-  margin-bottom: 20px;
-  background-color: rgba(214, 81, 81, 0.43);
-  backdrop-filter: blur(4px);
-  border-radius: 40px;
-  padding: 20px;
+    flex: 1 1 400px; 
+    margin-bottom: 20px;
+    background-color: rgba(214, 81, 81, 0.45);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: clamp(15px, 5vw, 30px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-/*Titles inside the containers*/
+/* HEADINGS INSIDE CONTAINERS */
 h2 {
-  font-size: 50px;
-  font-family: 'Super_Shape';
-  text-align: center;
-  margin: 5px 0 25px 0;
-  text-shadow:
-    -2px -2px #ba5b5b,
-     2px -2px #ba5b5b,
-    -2px  2px #ba5b5b,
-     2px  2px #4f6335;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    font-family: 'Super_Shape';
+    text-align: center;
+    margin: 5px 0 25px 0;
+    text-shadow: 2px 2px #ba5b5b;
 }
 
-/*TITLE ANIMATION*/
+/* ACCENT TEXT */
 main h3 {
-  font-size: 25px;
-  font-family: cursive;
-  font-weight: 900;
-  margin-left: 25px;
-  text-shadow:
-    -2px -2px #523030,
-     2px -2px #523030,
-    -2px  2px #523030,
-     2px  2px #523030;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-family: cursive;
+    font-weight: 900;
+    margin: 15px 0;
+    text-align: center; /* Better for mobile layout */
 }
 
-/* ------------------------ INSIDE THE RECIPE PAGES (For the pop open boxes) -----------------*/
-.Tab {
-  text-align: center;
-  font-family: 'Nature_Beauty', sans-serif;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+/* RECIPE TABS & DROPDOWNS */
+.ingredients, .procedure {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    gap: 15px;
 }
 
-.Tab:hover {
-  transform: scale(1.1);
+/* On Larger Screens, items can sit side-by-side */
+@media (min-width: 768px) {
+    .ingredients, .procedure {
+        flex-direction: row;
+    }
 }
 
-.ingredients {
-  float: left;
-  display: flex;
-  flex-direction: row;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.6s ease, opacity 0.4s ease;
-  gap: 20px;
-}
-
-.ingredients.open {
-  max-height: 700px;
-  opacity: 1;
+.ingredients.open, .procedure.open {
+    max-height: 1200px; /* Increased to allow for vertical stacking */
+    opacity: 1;
 }
 
 .ingredients_photo img {
-  width: 350px;
-  border-radius: 30px;
-  border: 3px solid white;
-  margin: 10px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 25px;
+    border: 3px solid white;
+    margin: 10px 0;
 }
 
-.procedure {
-  float: left;
-  display: flex;
-  flex-direction: row;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.6s ease, opacity 0.4s ease;
-  gap: 20px;
+/* BUTTONS & LABELS */
+button {
+    width: fit-content;
+    min-width: 200px;
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: 0.3s;
 }
 
-.procedure.open {
-  max-height: 700px;
-  opacity: 1;
+label {
+    display: block; /* Better hit area for fingers on iPad */
+    width: 90%;
+    margin: 10px auto;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    background-color: rgba(204, 69, 78, 0.7);
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
-/*RETURN LINKS*/
+/* RETURN LINKS */
 .return_link {
-  text-align: center;
-  margin-top: 40px;
+    text-align: center;
+    margin: 50px auto;
+    width: 100%;
 }
 
 .return_link a {
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-  background: rgba(186, 22, 66, 0.656);
-  padding: 15px 25px;
-  border-radius: 20px;
-  border: 2px solid white;
-  font-weight: bolder;
-  text-decoration: none;
-  transition: 0.25s;
+    display: inline-block;
+    padding: 15px 40px;
+    
+    background: #ffced4; 
+    color: #a4446f;
+    
+    font-family: 'Super_Shape', sans-serif;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    
+    border: none;
+    box-shadow: 0 8px 0 white; 
+    
+    transition: all 0.2s ease;
 }
 
 .return_link a:hover {
-  background: rgba(63, 53, 176, 0.642);
-  transform: scale(1.05);
+    transform: translateY(-3px);
 }
 
-/*-------------------------------QUIZ BUTTONS AND OPTIONS---------------------*/
-label {
-  font-family:'Trebuchet MS';
-  font-weight: 600;
-  font-size: larger;
-  background-color: rgba(204, 69, 78, 0.666);
-  backdrop-filter: blur(3px);
-  border-radius: 50px;
-  padding: 5px;
+.return_link a:active {
+    transform: translateY(6px);
 }
 
-label:hover {
-  background-color: rgba(99, 156, 255, 0.352);
+/* FOOTER */
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    font-size: 0.7rem;
+    text-align: center;
 }
 
-button{
-  display: block;
-  font-family: 'Nature_Beauty';
-  margin: 40px auto;
-  color: white;
-  background: rgba(255, 255, 255, 0.25);
-  padding: 10px;
-  border-radius: 20px;
-  border: 2px solid white;
-  font-weight: lighter;
-  font-size: 25px;
-  font-family: "Nature_Beauty";
-  text-shadow: 3px 3px 8px rgb(204, 69, 78);
-  transition: transform 0.25s ease-in-out
-}
-
-button:hover{
-  cursor: pointer;
-  transform: scale(1.15) rotate(1.3deg);
-}
-
-.quiz_questions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-}
-/*SOURCES AND CITATIONS*/
-footer{
-  background-color: rgba(0, 0, 0, 0.305);
-  font-size: 10px;
-  display: flex;
-  justify-content: center;
+/* IPAD & MOBILE SPECIFIC TWEAKS */
+@media (max-width: 480px) {
+    main { width: 95%; }
+    #about { border-radius: 25px; }
+    h2 { margin-bottom: 15px; }
 }
