@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pheobe's Suggestions</title>
+    <link rel="stylesheet" href="SUGGESTIONS.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 style="-webkit-text-stroke: 1px rgb(189, 59, 59); font-size: 80px;"> Recipe Suggestions Box </h1>
+      <div class="home-nav">
+    <a href="../index.html">
+        <img src="../assets/newlogo.png" alt="Home" class="home-icon">
+    </a>
+</div>
+        </header>
+
+        <section class="form-section">
+            <form id="suggestionForm">
+                <input type="hidden" id="editIndex"> <input type="text" id="userName" placeholder="Your Name (e.g., Pheobe)" required>
+                <textarea id="userIdea" placeholder="Share your sweet idea here..." required></textarea>
+                <button type="submit" id="submitBtn">Suggest Recipe ✨</button>
+            </form>
+        </section>
+
+        <section class="wall-section">
+            <div id="suggestionWall" class="grid-container">
+                </div>
+        </section>
+    </div>
+
+    <script src="SUGGESTIONS.js"></script>
+</body>
+</html>

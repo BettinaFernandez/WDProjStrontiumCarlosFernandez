@@ -1,0 +1,222 @@
+/* --- Root Variables & Reset --- */
+:root {
+    --primary-pink: #ffc2d1;
+    --dark-pink: #fb6f92;
+    --text-color: #5e548e;
+    --card-bg: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: 'Nature_Beauty';
+  src: url('../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Super_Shape';
+  src: url('../assets/SuperShape-PV9qE.ttf') format('truetype');
+} 
+
+body {
+    background: url('../assets/storeBackground.jpg');
+    font-family: 'Super_Shape';
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.home-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.home-icon {
+    width: 150px; 
+    max-width: 25vw;
+    height: auto;
+    cursor: pointer;
+    transition: var(--transition);
+    filter: drop-shadow(0 4px 6px rgba(255, 194, 209, 0.5));
+}
+
+.home-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 6px 12px rgba(251, 111, 146, 0.6));
+}
+
+/* --- Container & Layout --- */
+.container {
+    max-width: 900px;
+    margin: 60px auto 20px auto; 
+    text-align: center;
+    padding: 0 15px;
+}
+
+header h1 {
+    color: var(--dark-pink);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- Responsive Form Styling --- */
+.form-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 25px;
+    border: 3px dashed var(--primary-pink);
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px rgba(255, 194, 209, 0.2);
+}
+
+#suggestionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%; /* Full width of its container */
+    max-width: 600px;
+    padding: 15px;
+    border: 2px solid var(--primary-pink);
+    border-radius: 15px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--dark-pink);
+    background-color: #fff;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical; /* Allows user to resize height only */
+}
+
+button#submitBtn {
+    background-color: var(--dark-pink);
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(251, 111, 146, 0.3);
+}
+
+button#submitBtn:hover {
+    transform: translateY(-3px);
+    background-color: #ff8fab;
+    box-shadow: 0 6px 15px rgba(251, 111, 146, 0.4);
+}
+
+/* --- Responsive Grid Wall --- */
+.grid-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    display: grid;
+    /* This line makes the grid responsive without media queries! */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding-bottom: 50px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(255, 194, 209, 0.3);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: var(--dark-pink);
+}
+
+.card p {
+    font-size: 0.95rem;
+    word-wrap: break-word; /* Prevents long text from breaking layout */
+}
+
+/* --- CRUD Buttons --- */
+.btn-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.edit-btn {
+    background: #bde0fe;
+    color: #0077b6;
+}
+
+.delete-btn {
+    background: #ffccd5;
+    color: #c9184a;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* --- Mobile Specific --- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .home-icon {
+        width: 50px; 
+    }
+
+    .container {
+        margin-top: 80px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+}
