@@ -1,9 +1,9 @@
-let dIndex = 0;
+let dIndex = 0; //tracks the dialogue
 const lines = ["Ready to cook?", "Let's make the Golden Omelette!", "That's all, good luck!"];
 
-let step = 1;
-let val = 0;
-let active = false;
+let step = 1; // currrent cooking stage
+let val = 0; // progrerss bar
+let active = false; //see if user is active
 
 const gameImg = document.getElementById('gameImg');
 const utensil = document.getElementById('utensil');
@@ -15,7 +15,7 @@ function startDialogue() {
     document.getElementById('dialogueScreen').style.display = "flex";
     type(lines[0]);
 }
-
+// TYPEWRITER ANIMATIONNNNNNNNNNN YAAAAY
 function type(t) {
     let i = 0;
     document.getElementById('typeText').innerHTML = "";
@@ -31,7 +31,7 @@ function handleNext() {
     if(dIndex < lines.length) type(lines[dIndex]);
     else endDialogue();
 }
-
+//launch gameplay
 function endDialogue() {
     document.getElementById('dialogueScreen').style.display = "none";
     document.getElementById('gameScreen').style.display = "flex";
@@ -44,7 +44,7 @@ document.onmousemove = (e) => {
         if(active) { val += 0.8; update(); }
     }
 };
-
+//mous emoving
 function startAction() {
     active = true;
     if(step === 1 || step === 3) {
@@ -54,12 +54,12 @@ function startAction() {
     }
     if(step === 2) gameImg.classList.add('shake');
 }
-
+//mouse not mving
 function stopAction() {
     active = false;
     gameImg.classList.remove('shake');
 }
-
+//progress bar update
 function update() {
     bar.style.width = val + "%";
     if(val >= 100) {

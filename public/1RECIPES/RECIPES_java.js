@@ -2,37 +2,37 @@
 const recipeData = [
     {
         title: "Rice and Vegetables",
-        desc: "Yummy Yummy",
+        desc: "Bibimbap, cesarsalad, Egg Rice, Fried Rice, Onigiri, Risotto",
         link: "../rice_veggies_recipes/rice_veggies.html"
     },
     {
         title: "Beef Recipes",
-        desc: "Hearty and savory dishes for the meat lover. From classic stews to sizzling steaks, explore the rich flavors of beef!",
+        desc: "Beef Broccoli, Beef stew, Bulgogi, Gyudon, Wagyu Steak, Yakiniku",
         link: "../beef_recipes/beef.html",
     },
     {
         title: "Pork Recipes",
-        desc: "Versatile and delicious. Discover sweet and savory pork recipes that are 'Even Better Than Mama's!'",
+        desc: "Katsudon, Porchetta Pork Chops, Pork Adobo, Pork Menudo, Pork Steak",
         link: "../pork_recipes/pork.html",
     },
     {
         title: "Desserts",
-        desc: "Sweet, mouthwatering treats to end your meal. From cakes to puddings, Phoebe's sweet tooth has you covered!",
+        desc: "Brownies, Carrot Cake, Crepes, Rocky Road Ice Cream, Sansrival",
         link: "../desserts_recipes/desserts.html",
     },
     {
         title: "Chicken Recipes",
-        desc: "Yummy Yummy",
+        desc: "Afritada, Katsu, Stroganoff, Tinola, Garlic Chicken Breast, Fried Chicken",
         link: "../chicken_recipes/chicken.html"
     },
     {
        title: "Beverages",
-       desc: "Yummy Yummy",
+       desc: "Ginger Tea, Horchata, Hot Chocolate, Lemonade, Mango Shake, Vanilla Shake",
        link:  "../drinks_recipes/drinks.html"
     },
     {
         title: "Pasta Recipes",
-        desc: "Yummy Yummy",
+        desc: "Carbonara, Garlic Butter Shrimp Scampi, Macaroni Salad, Pasta Pritata, Pasta Primavera, Spaghetti",
         link: "../pasta_recipes/pasta_noodles.html"
     }
 
@@ -43,7 +43,8 @@ let currentIndex = 0;
 function changePage(direction) {
     currentIndex += direction;
 
-    // Boundary checks (Looping)
+    // Boundary checks 
+    //loops through the htings thingys
     if (currentIndex >= recipeData.length) currentIndex = 0;
     if (currentIndex < 0) currentIndex = recipeData.length - 1;
 

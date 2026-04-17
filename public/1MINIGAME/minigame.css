@@ -59,9 +59,7 @@ body {
     margin-left: 10px; 
 }
 
-/* 
-   3. THE GLASS CONTAINERS
-   */
+
 .screen {
     position: fixed;
     inset: 0;
@@ -73,7 +71,7 @@ body {
     z-index: 10;
 }
 
-/* Purple Glass Design */
+
 .bulletin-board, .bubble, .result-card, .kitchen-table {
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
@@ -288,6 +286,77 @@ body {
 .ing-item:active {
     cursor: grabbing;
     transform: scale(1) rotate(0deg);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px 5%;
+  
+    background: rgba(48, 25, 78, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer h5 {
+    font-family: 'Super_Shape', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #ce93d8; 
+    text-transform: uppercase;
+}
+
+/* APA Hanging Indent Style */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 2em; 
+    text-indent: -2em; 
+    word-wrap: break-word; 
+}
+
+footer a {
+    color: #b39ddb;
+    text-decoration: none;
+    transition: 0.2s;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+footer a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 15px;
+        text-align: left;
+    }
+    footer li {
+        font-size: 0.75rem;
+        padding-left: 1.5em;
+        text-indent: -1.5em;
+    }
 }
 
 /* --- ADDIIONAL IPAD/LAPTOP ADJUSTMENT --- */

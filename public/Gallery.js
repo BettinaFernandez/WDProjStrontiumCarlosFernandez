@@ -1,7 +1,8 @@
 
 let usersData = JSON.parse(localStorage.getItem("bakerUsers")) || {};
-let currentUser = "";
+let currentUser = ""; //gets the username
 
+//the dom thinyy
 const authOverlay = document.getElementById('authOverlay');
 const mainGallery = document.getElementById('mainGallery');
 const bulletinBoard = document.getElementById('bulletinBoard');
@@ -13,7 +14,7 @@ function toggleAuth(isSignup) {
     document.getElementById('loginFields').style.display = isSignup ? 'none' : 'block';
     document.getElementById('signupFields').style.display = isSignup ? 'block' : 'none';
 }
-
+//verifies if the signup has been done or not
 function handleAuth(isSignup = false) {
     const userInp = isSignup ? document.getElementById('newUsername').value : document.getElementById('username').value;
     
@@ -31,7 +32,7 @@ function handleAuth(isSignup = false) {
     currentUser = userInp;
     showGallery();
 }
-
+//opens the gallery from the form to the main thing
 function showGallery() {
     authOverlay.style.display = "none";
     mainGallery.style.display = "block";
@@ -46,7 +47,7 @@ dropZone.ondragover = (e) => {
 };
 
 dropZone.ondragleave = () => dropZone.classList.remove('drag-over');
-
+//THIS IS THE DROP EVENT LOL
 dropZone.ondrop = (e) => {
     e.preventDefault();
     dropZone.classList.remove('drag-over');
@@ -55,7 +56,7 @@ dropZone.ondrop = (e) => {
 };
 
 fileInput.onchange = (e) => processFile(e.target.files[0]);
-
+//the image beocmes a localstroage string
 function processFile(file) {
     if (file && file.type.startsWith('image/')) {
         const reader = new FileReader();
@@ -69,6 +70,7 @@ function processFile(file) {
 
 
 // CREATE
+//pushes to user database
 function addPhoto(url) {
     const caption = imgCaption.value || "Freshly Baked!";
     const newPhoto = {
@@ -84,6 +86,7 @@ function addPhoto(url) {
 }
 
 // READ
+//iterares the stores array op the suser
 function loadPhotos() {
     bulletinBoard.innerHTML = "";
     // Access the specific array for the logged-in user
