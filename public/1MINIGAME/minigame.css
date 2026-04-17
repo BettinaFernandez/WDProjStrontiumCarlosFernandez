@@ -1,12 +1,18 @@
-body {
+
+* {
     margin: 0;
-    background: url("../../assets/storeBackground.jpg");
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
-    color:#4a148c;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --purple-blur: rgba(74, 20, 140, 0.6);
+    --accent-purple: #9575cd;
+}
+
+/*CUSTOM FONTS*/
 @font-face {
   font-family: 'Nature_Beauty';
   src: url('../../assets/NatureBeautyPersonalUse-9Y2DK.ttf') format('truetype');
@@ -14,11 +20,48 @@ body {
 
 @font-face {
   font-family: 'Super_Shape';
-  src: url('../../assets/SuperShape-PV9qE.ttf') format('truetype');
+  src: url('../../assets/SuperShape-PV9qE.ttf') format('truetype');}
+
+body {
+    font-family: 'Super_Shape';
+    background: url("../../assets/storeBackground.jpg") center/cover no-repeat fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: #4a148c;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* 
+   2. HEADER & LOGO (SCALES FOR IPADS/LAPTOPS)
+    */
+.home-logo-link {
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    z-index: 1000;
+    background: var(--purple-blur);
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    transition: 0.3s;
+}
 
+.home-logo-link:hover { transform: scale(1.05); }
 
+.home-logo-link img { 
+    height: clamp(40px, 8vh, 80px); /* Scales with screen height */
+    margin-left: 10px; 
+}
+
+/* 
+   3. THE GLASS CONTAINERS
+   */
 .screen {
     position: fixed;
     inset: 0;
@@ -26,121 +69,247 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
     z-index: 10;
+}
+
+/* Purple Glass Design */
+.bulletin-board, .bubble, .result-card, .kitchen-table {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+/* 
+   4. RECIPE MENU  */
+.bulletin-board {
+    width: 90%;
+    max-width: 1000px; /* Wider for Laptops */
+    padding: 40px;
+    text-align: center;
+    border: 2px solid rgba(255,255,255,0.5);
 }
 
 .screen h1 {
     font-family: 'Super_Shape';
-    font-size: 50px;    
-    letter-spacing: 3px;
+    font-size: clamp(2rem, 6vw, 4rem);
     color: white;
-    font-weight: 200;   
+    margin-bottom: 30px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
 }
 
-.home-logo-link {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #6d14ad;
-    font-weight: bold;
-    z-index: 100;
+.recipe-cards { 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center;
+    flex-wrap: wrap; 
 }
-
-.home-logo-link img { height: 150px; margin-left: 10px; }
-
-.bulletin-board {
-    background: #9575cd;
-    padding: 50px;
-    border: 15px solid #5d4037;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.recipe-cards { display: flex; gap: 30px; margin-top: 20px; }
 
 .card {
     background: white;
     padding: 20px;
-    border-radius: 5px;
-    width: 130px;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    border-radius: 15px;
+    width: clamp(140px, 20vw, 220px); /* Larger for Ipads/Laptops */
+    transition: 0.3s;
 }
 
-.card.active { cursor: pointer; transform: rotate(-2deg); transition: 0.3s; }
-.card.active:hover { transform: scale(1.1) rotate(0deg); }
-.card.locked { opacity: 0.6; cursor: not-allowed; }
+.menu-img { width: 100%; height: auto; max-height: 150px; object-fit: contain; }
 
-.menu-img { width: 100px; height: 100px; object-fit: contain; }
-
-.bubble {
-    background: white;
-    padding: 40px;
-    border-radius: 50px;
-    border: 6px solid #9575cd;
-    width: 500px;
-    text-align: center;
-    box-shadow: 0 10px 0 #7e57c2;
-}
-
-#typeText { font-size: 1.8rem; color: #4a148c; font-weight: bold; }
-
+/*
+   5. KITCHEN TABLE & GAMEPLAY
+    */
 .kitchen-table {
-    background: #fff9c4;
-    width: 85%;
-    height: 80%;
-    border: 12px solid #fbc02d;
-    border-radius: 60px;
-    text-align: center;
-    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    height: 85vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-#interactionZone { height: 400px; position: relative; display: flex; justify-content: center; align-items: center; }
+#interactionZone { 
+    flex-grow: 1;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+}
 
-#gameImg { width: 250px; user-select: none; }
-#utensil { width: 120px; position: absolute; pointer-events: none; z-index: 50; display: none; }
+#gameImg { 
+    width: auto;
+    height: 40vh; 
+    max-height: 400px;
+    user-select: none; 
+}
 
-.meter { width: 500px; height: 30px; background: #eee; margin: 20px auto; border-radius: 20px; border: 4px solid #5d4037; overflow: hidden; }
-#bar { width: 0%; height: 100%; background: #66bb6a; transition: 0.1s; }
+#utensil { 
+    width: clamp(80px, 15vh, 150px); 
+    position: fixed; 
+    pointer-events: none; 
+    z-index: 100; 
+    display: none; 
+}
 
-.ing-item { width: 80px; margin: 0 20px; cursor: grab; }
+.meter { 
+    width: 80%; 
+    max-width: 600px; 
+    height: 30px; 
+    background: rgba(255, 255, 255, 0.2); 
+    margin: 20px auto; 
+    border-radius: 50px; 
+    border: 2px solid white; 
+    overflow: hidden; 
+}
 
-.result-card { background: white; padding: 50px; border-radius: 40px; text-align: center; box-shadow: 0 20px 0 #9f62f0; border: 8px solid #e4bbf8; }
-.final-dish { width: 350px; border-radius: 20px; margin: 20px 0; }
+#bar { 
+    width: 0%; 
+    height: 100%; 
+    background: linear-gradient(90deg, #9575cd, #ce93d8); 
+    transition: 0.1s; 
+}
 
-.shake { animation: shake 0.1s infinite; }
-@keyframes shake { 0% { transform: translate(2px, 2px); } 50% { transform: translate(-2px, -2px); } }
+
+.result-card {
+    font-family: 'Super_Shape';
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: clamp(30px, 5vh, 60px);
+    border-radius: 40px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+
+.final-dish {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+    margin: 20px 0;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+
 
 .result-card button {
-    background: linear-gradient(135deg, #ff80ab, #f06292); 
+    background: linear-gradient(135deg, #41296a, #6a1b9a);
     color: white;
     border: none;
-    padding: 18px 40px;
-    font-size: 1.5rem;
-    font-family: 'Segoe UI', sans-serif;
+    padding: 18px 45px;
+    font-size: 1.4rem;
     font-weight: 900;
     border-radius: 50px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
-    
-    /* This creates the "3D" pop-out effect */
-    box-shadow: 0 8px 0 #ad1457; 
-    
+    box-shadow: 0 8px 0 #4a148c; 
     transition: all 0.2s ease;
-    margin-top: 20px;
 }
 
 .result-card button:hover {
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     filter: brightness(1.1);
-    box-shadow: 0 11px 0 #ad1457;
+    background-color: #ce93d8;
+    box-shadow: 0 11px 0 #4a148c;
 }
 
 .result-card button:active {
     transform: translateY(5px);
-    box-shadow: 0 3px 0 #ad1457;
+    background-color: #f0c8f7;
+    box-shadow: 0 3px 0 #4a148c;
 }
+/* 
+   6. DIALOGUE BUBBLE
+    */
+.bubble {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    color: rgb(136, 49, 185);
+}
+
+#typeText { font-size: clamp(1.2rem, 3vw, 2rem); }
+
+.bubble-btns button, .result-card button {
+    background: white;
+    color: #4a148c;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.bubble-btns button:hover { background: #ce93d8; color: white; }
+
+/* 
+   ingredient shelf & toppings (SCALABLE)
+    */
+#ingredientShelf {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 15px;
+    width: fit-content;
+    max-width: 90%;
+    margin: 15px auto;
+    display: flex; /* Centers them */
+    justify-content: center;
+    gap: 10px;
+}
+
+.ing-item {
+    /* scales size between 35px on phones and 65px on laptops */
+    width: clamp(35px, 8vw, 65px); 
+    height: auto;
+    cursor: grab;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    -webkit-user-drag: element; /* Essential for mobile drag-and-drop */
+    margin: 0; /* Let flex gap handle spacing */
+}
+
+
+.ing-item:hover {
+    transform: scale(1.15) rotate(3deg);
+    filter: brightness(1.1);
+}
+
+.ing-item:active {
+    cursor: grabbing;
+    transform: scale(1) rotate(0deg);
+}
+
+/* --- ADDIIONAL IPAD/LAPTOP ADJUSTMENT --- */
+@media (max-width: 1024px) {
+    .ing-item {
+        width: 50px;
+    }
+}
+/*
+   7. IPAD / TABLET ADJUSTMENTS*/
+@media (max-width: 1024px) {
+    .recipe-cards { gap: 15px; }
+    .kitchen-table { height: 70vh; }
+    .home-logo-link span { display: none; } 
+}
+
+@media (max-width: 600px) {
+    body { overflow-y: auto; } 
+    .screen { position: relative; min-height: 100vh; padding-top: 80px; }
+    .card { width: 140px; }
+    .kitchen-table { height: auto; min-height: 600px; }
+}
+
+.shake { animation: shake 0.1s infinite; }
+@keyframes shake { 0% { transform: rotate(1deg); } 50% { transform: rotate(-1deg); } }

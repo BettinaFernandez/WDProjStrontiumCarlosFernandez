@@ -1,8 +1,10 @@
-body {
+/* =========================================
+   1. GLOBAL STYLES & FONTS
+   ========================================= */
+* {
     margin: 0;
-    background-color: #f3e5f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 800;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -15,6 +17,71 @@ body {
   src: url('../assets/SuperShape-PV9qE.ttf') format('truetype');
 }
 
+body {
+    background-color: #f3e5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. LOGIN OVERLAY (GLASSMORPHISM)
+   ========================================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(48, 25, 61, 0.7); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease;
+}
+
+.auth-box {
+    font-family: 'Nature_Beauty';
+    color: #fffaf0; 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); 
+    
+    /* Idle Floating Animation */
+    animation: floatIdle 4s ease-in-out infinite;
+}
+
+@keyframes floatIdle {
+    0% { transform: translateY(0px) rotate(-1deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(-1deg); }
+}
+
+.auth-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================================
+   3. NAVIGATION & HEADER
+   ========================================= */
 .home-link {
     font-size: 20px;
     position: absolute;
@@ -24,77 +91,29 @@ body {
     align-items: center;
     text-decoration: none;
     color: #462054;
-    font-weight: bold;
     z-index: 500;
 }
 
 .home-link img {
     height: 150px;
+    width: auto;
     margin-right: 10px;
-}
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(74, 44, 90, 0.6);
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 0.8s ease;
-}
-
-.auth-box {
-    font-family: 'Nature_Beauty';
-    color:#412054;
-    background: #fffaf0;
-    padding: 40px;
-    border-radius: 30px;
-    text-align: center;
-    width: 320px;
-    border: 2px solid rgb(115, 73, 155);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-
-.login-icon { 
-    font-size: 3rem; 
-    margin-bottom: 10px; 
+    transition: transform 0.3s ease;
 }
 
 #userGreeting {
     font-family: 'Super_Shape';
     text-align: center;
     color: #412054;
-    font-size: 3rem;
-    margin-top: 60px;
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font scaling */
+    margin-top: 80px;
+    padding: 0 20px;
     text-shadow: 2px 2px #fff;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background: linear-gradient(135deg, #9b6ab3, #542048);
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover { 
-    transform: scale(1.03); 
-}
-
+/* =========================================
+   4. THE CORKBOARD & POLAROIDS
+   ========================================= */
 .board {
     background-color: #6a4c93;
     width: 85%;
@@ -113,12 +132,16 @@ button:hover {
 .polaroid {
     background: white;
     padding: 15px 15px 40px 15px;
-    width: fit-content;
-    max-width: 350px;
+    width: 100%;
+    max-width: 300px;
     position: relative;
     box-shadow: 5px 10px 20px rgba(0,0,0,0.3);
     transform: rotate(-2deg);
     transition: 0.3s;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
 }
 
 .polaroid:hover { 
@@ -128,15 +151,9 @@ button:hover {
 
 .polaroid img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border: 1px solid #eee;
-}
-
-.polaroid p {
-    text-align: center;
-    font-family: 'Nature_Beauty';
-    font-size: 1.2rem;
-    margin-top: 15px;
 }
 
 .pin {
@@ -151,6 +168,25 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
+/* =========================================
+   5. BUTTONS & CONTROLS
+   ========================================= */
+button {
+    background: linear-gradient(135deg, #9b6ab3, #542048);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { 
+    transform: scale(1.03); 
+    filter: brightness(1.1);
+}
+
 .controls {
     text-align: center;
     padding: 20px;
@@ -160,22 +196,63 @@ button:hover {
     border: 2px dashed #9b6ab3;
     background: white;
     padding: 20px;
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
     margin: 10px auto;
     border-radius: 15px;
     cursor: pointer;
     color: #6a4c93;
-    font-weight: bold;
 }
 
-.fade-out { 
-    opacity: 0; 
-    pointer-events: none; 
+/* =========================================
+   6. RESPONSIVENESS (MOBILE FIXES)
+   ========================================= */
+@media (max-width: 768px) {
+    .home-link img {
+        height: 80px; /* Smaller logo for tablet */
+    }
+
+    .board {
+        width: 95%;
+        padding: 20px;
+        border-width: 10px;
+    }
+
+    #userGreeting {
+        margin-top: 100px;
+    }
 }
 
-.toggle-text { 
-    font-size: 0.9rem; 
-    cursor: pointer; 
-    color: #9b6ab3; 
-    text-decoration: underline; 
+@media (max-width: 480px) {
+    .home-link {
+        position: relative;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .home-link img {
+        height: 60px;
+    }
+
+    #userGreeting {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+
+    .board {
+        border-width: 6px;
+        padding: 15px;
+    }
+
+    .auth-box {
+        width: 90%;
+        padding: 25px;
+    }
 }
+
+/* Helper Classes */
+.fade-out { opacity: 0; pointer-events: none; }
+.toggle-text { font-size: 0.9rem; cursor: pointer; color: #9b6ab3; text-decoration: underline; }
