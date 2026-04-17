@@ -42,10 +42,19 @@
     }
 
     header h1 {
-      font-size: 100px;
-      font-family: 'Super_Shape';
-        font-weight: lighter;
-    }
+    font-size: clamp(40px, 8vw, 100px); 
+    font-family: 'Super_Shape';
+    font-weight: lighter;
+    width: 100%; 
+}
+
+header img {
+  width: 100%;
+  max-width: 80px; /* Limits size on desktop */
+  height: auto;    /* Maintains aspect ratio */
+  display: block;
+  margin-bottom: 5px;
+} 
 
     nav ul {
     list-style: none;
